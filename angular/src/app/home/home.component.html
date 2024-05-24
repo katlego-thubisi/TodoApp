@@ -1,0 +1,138 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">
+        {{ '::Welcome_Title' | abpLocalization }}
+      </h5>
+    </div>
+    <div class="card-body">
+      @if(!hasLoggedIn){
+      <button class="btn btn-primary mb-2" (click)="login()">
+        {{ 'AbpUi::Login' | abpLocalization }}
+      </button>
+      }
+
+      <p>{{ '::Welcome_Text' | abpLocalization }}</p>
+    </div>
+  </div>
+  <div class="card mt-5">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md d-flex align-items-center">
+          <div class="pe-0 pe-md-4">
+            <h2>Dashobard</h2>
+            @if(hasLoggedIn && !isAdmin){
+
+            <form class="row" (ngSubmit)="create()">
+              <div class="col-md-6">
+                <label>Name</label>
+                <input
+                  name="Name"
+                  type="text"
+                  [(ngModel)]="memberItem.name"
+                  class="form-control"
+                  placeholder="enter text..."
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label>Surname</label>
+                <input
+                  name="Surname"
+                  type="text"
+                  [(ngModel)]="memberItem.surname"
+                  class="form-control"
+                  placeholder="enter text..."
+                />
+              </div>
+              <div class="col-md-6">
+                <label>ID or Passport</label>
+                <input
+                  name="Id/Passport"
+                  type="text"
+                  [(ngModel)]="memberItem.id_Passport"
+                  class="form-control"
+                  placeholder="enter text..."
+                />
+              </div>
+              <div class="col-md-6">
+                <label>FSCA Registration Number</label>
+                <input
+                  name="fscaRegistrationNumber"
+                  type="text"
+                  [(ngModel)]="memberItem.fscaRegistrationNumber"
+                  class="form-control"
+                  placeholder="enter text..."
+                />
+              </div>
+              <div class="col-md-6">
+                <label>Investment portfolio</label>
+                <input
+                  name="investmentPortfolio"
+                  type="text"
+                  [(ngModel)]="memberItem.investmentPortfolio"
+                  class="form-control"
+                  placeholder="enter text..."
+                />
+              </div>
+              <div class="col-md-6">
+                <label>Investment amount</label>
+                <input
+                  name="investmentAmount"
+                  type="text"
+                  [(ngModel)]="memberItem.investmentAmount"
+                  class="form-control"
+                  placeholder="enter text..."
+                />
+              </div>
+              <div class="col-md-6">
+                <label>Reason for transfer</label>
+                <input
+                  name="reasonForTransfer"
+                  type="text"
+                  [(ngModel)]="memberItem.reasonForTransfer"
+                  class="form-control"
+                  placeholder="enter text..."
+                />
+              </div>
+              <div class="col-md-6">
+                <label>Account number</label>
+                <input
+                  name="accountNumber"
+                  type="text"
+                  [(ngModel)]="memberItem.accountNumber"
+                  class="form-control"
+                  placeholder="enter text..."
+                />
+              </div>
+              <div class="col-md-6">
+                <label>Tax number</label>
+                <input
+                  name="taxNumber"
+                  type="text"
+                  [(ngModel)]="memberItem.taxNumber"
+                  class="form-control"
+                  placeholder="enter text..."
+                />
+              </div>
+              <div class="col-md-6">
+                <label>Policy number</label>
+                <input
+                  name="policyNumber"
+                  type="text"
+                  [(ngModel)]="memberItem.policyNumber"
+                  class="form-control"
+                  placeholder="enter text..."
+                />
+              </div>
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
